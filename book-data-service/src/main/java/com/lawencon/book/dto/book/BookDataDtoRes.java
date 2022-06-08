@@ -19,7 +19,16 @@ public class BookDataDtoRes {
 	private Integer numPages;
 	private String bookLanguage;
 	private BigInteger reviewCount;
+	private BigInteger bookmarkCount;
 	private List<Genre> genreData;
+
+	public BigInteger getBookmarkCount() {
+		return bookmarkCount;
+	}
+
+	public void setBookmarkCount(BigInteger bookmarkCount) {
+		this.bookmarkCount = bookmarkCount;
+	}
 
 	public BigInteger getReviewCount() {
 		return reviewCount;

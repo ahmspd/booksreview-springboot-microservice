@@ -104,6 +104,7 @@ public class BookServiceImpl implements BookService {
 		BookDataDtoRes resData = new BookDataDtoRes();
 		BigDecimal avgRating = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/avg/"+book.getId(), BigDecimal.class);
 		BigInteger reviewCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/count/"+book.getId(), BigInteger.class);
+		BigInteger bookmarkCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/bookmark/count/"+book.getId(), BigInteger.class);
 		resData.setId(book.getId());
 		resData.setRating(avgRating);
 		resData.setAuthor(book.getAuthor());
@@ -115,6 +116,7 @@ public class BookServiceImpl implements BookService {
 		resData.setSynopsis(book.getSynopsis());
 		resData.setTitle(book.getTitle());
 		resData.setReviewCount(reviewCount);
+		resData.setBookmarkCount(bookmarkCount);
 		resData.setYearPublished(book.getYearPublished());
 		
 		List<String> listGenre = genreBookDao.getIdGenreByBook(id);
@@ -141,6 +143,7 @@ public class BookServiceImpl implements BookService {
 			BookDataDtoRes resData = new BookDataDtoRes();
 			BigDecimal avgRating = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/avg/"+book.getId(), BigDecimal.class);
 			BigInteger reviewCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/count/"+book.getId(), BigInteger.class);
+			BigInteger bookmarkCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/bookmark/count/"+book.getId(), BigInteger.class);
 			resData.setId(book.getId());
 			resData.setRating(avgRating);
 			resData.setAuthor(book.getAuthor());
@@ -152,6 +155,7 @@ public class BookServiceImpl implements BookService {
 			resData.setSynopsis(book.getSynopsis());
 			resData.setTitle(book.getTitle());
 			resData.setReviewCount(reviewCount);
+			resData.setBookmarkCount(bookmarkCount);
 			resData.setYearPublished(book.getYearPublished());
 			List<String> listGenre = genreBookDao.getIdGenreByBook(book.getId());
 			List<Genre> genreBook = new ArrayList<Genre>();
@@ -179,6 +183,7 @@ public class BookServiceImpl implements BookService {
 			BookDataDtoRes resData = new BookDataDtoRes();
 			BigDecimal avgRating = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/avg/"+book.getId(), BigDecimal.class);
 			BigInteger reviewCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/count/"+book.getId(), BigInteger.class);
+			BigInteger bookmarkCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/bookmark/count/"+book.getId(), BigInteger.class);
 			resData.setId(book.getId());
 			resData.setRating(avgRating);
 			resData.setAuthor(book.getAuthor());
@@ -190,6 +195,7 @@ public class BookServiceImpl implements BookService {
 			resData.setSynopsis(book.getSynopsis());
 			resData.setTitle(book.getTitle());
 			resData.setReviewCount(reviewCount);
+			resData.setBookmarkCount(bookmarkCount);
 			resData.setYearPublished(book.getYearPublished());
 			
 			List<String> listGenre = genreBookDao.getIdGenreByBook(listIdBook);
@@ -221,6 +227,7 @@ public class BookServiceImpl implements BookService {
 			BookDataDtoRes resData = new BookDataDtoRes();
 			BigDecimal avgRating = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/avg/"+book.getId(), BigDecimal.class);
 			BigInteger reviewCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/reviews/count/"+book.getId(), BigInteger.class);
+			BigInteger bookmarkCount = restTemplate.getForObject("http://BOOK-TRANSACTION-SERVICE/book/transaction/bookmark/count/"+book.getId(), BigInteger.class);
 			resData.setId(book.getId());
 			resData.setRating(avgRating);
 			resData.setAuthor(book.getAuthor());
@@ -232,6 +239,7 @@ public class BookServiceImpl implements BookService {
 			resData.setSynopsis(book.getSynopsis());
 			resData.setTitle(book.getTitle());
 			resData.setReviewCount(reviewCount);
+			resData.setBookmarkCount(bookmarkCount);
 			resData.setYearPublished(book.getYearPublished());
 			
 			List<String> listGenre = genreBookDao.getIdGenreByBook(listIdBook);

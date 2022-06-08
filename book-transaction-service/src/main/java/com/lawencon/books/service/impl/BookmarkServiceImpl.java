@@ -1,5 +1,7 @@
 package com.lawencon.books.service.impl;
 
+import java.math.BigInteger;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +60,12 @@ public class BookmarkServiceImpl implements BookmarkService {
 	@Override
 	public PojoBooks getIdBookFromBookmark(String idUser) {
 		PojoBooks result = bookmarkDao.getIdBookFromBookmark(idUser);
+		return result;
+	}
+	
+	@Override
+	public BigInteger getCountBookmark(String idBook) {
+		BigInteger result = bookmarkDao.getCountReview(idBook);
 		return result;
 	}
 }

@@ -1,5 +1,7 @@
 package com.lawencon.books.controller;
 
+import java.math.BigInteger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,5 +34,11 @@ public class BookmarkController {
 	public ResponseEntity<PojoBooks> getIdBookFromBookmark(@PathVariable String idUser) throws Exception {
 		PojoBooks result = bookmarkService.getIdBookFromBookmark(idUser);
 		return new ResponseEntity<PojoBooks>(result, HttpStatus.OK);
+	}
+	
+	@GetMapping("count/{idBook}")
+	public ResponseEntity<BigInteger> getCountBookmark(@PathVariable String idBook) throws Exception {
+		BigInteger data = bookmarkService.getCountBookmark(idBook);
+		return new ResponseEntity<BigInteger>(data, HttpStatus.OK);
 	}
 }
