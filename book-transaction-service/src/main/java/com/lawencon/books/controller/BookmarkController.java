@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lawencon.books.dto.InsertDtoRes;
@@ -40,5 +41,11 @@ public class BookmarkController {
 	public ResponseEntity<BigInteger> getCountBookmark(@PathVariable String idBook) throws Exception {
 		BigInteger data = bookmarkService.getCountBookmark(idBook);
 		return new ResponseEntity<BigInteger>(data, HttpStatus.OK);
+	}
+	
+	@GetMapping("id")
+	public ResponseEntity<String> getIdBookmark(@RequestParam String idBook, @RequestParam String idUser) throws Exception {
+		String data = bookmarkService.GetIdBookmark(idBook, idUser);
+		return new ResponseEntity<String>(data, HttpStatus.OK);
 	}
 }

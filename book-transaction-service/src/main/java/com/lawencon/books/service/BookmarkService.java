@@ -12,4 +12,6 @@ public interface BookmarkService extends BaseMasterService {
 	PojoBooks getIdBookFromBookmark(String idUser);
 	
 	BigInteger getCountBookmark(String idBook);
+	
+	String GetIdBookmark(String idBook, String idUser);
 }

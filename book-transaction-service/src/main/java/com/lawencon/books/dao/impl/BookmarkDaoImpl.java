@@ -61,4 +61,14 @@ public class BookmarkDaoImpl extends BaseDaoImpl implements BookmarkDao {
 				.getSingleResult();
 		return (BigInteger) result;
 	}
+	
+	@Override
+	public String getIdBookmark(String idBook, String idUser) {
+		String sql = "select tb.id from t_bookmark tb where tb.id_book = :idBook and tb.created_by = :idUser";
+		Object result = em.createNativeQuery(sql)
+				.setParameter("idBook", idBook)
+				.setParameter("idUser", idUser)
+				.getSingleResult();
+		return (String) result;
+	}
 }

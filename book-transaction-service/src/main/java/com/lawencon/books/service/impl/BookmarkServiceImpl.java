@@ -68,4 +68,10 @@ public class BookmarkServiceImpl implements BookmarkService {
 		BigInteger result = bookmarkDao.getCountReview(idBook);
 		return result;
 	}
+	
+	@Override
+	public String GetIdBookmark(String idBook, String idUser) {
+		String result = bookmarkDao.getIdBookmark(idBook, idUser);
+		return result;
+	}
 }

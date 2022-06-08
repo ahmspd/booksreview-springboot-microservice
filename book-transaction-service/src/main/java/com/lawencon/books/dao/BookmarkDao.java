@@ -9,4 +9,6 @@ public interface BookmarkDao extends BaseMasterDao<Bookmark>{
 	PojoBooks getIdBookFromBookmark(String idUser);
 	
 	BigInteger getCountReview(String idBook);
+	
+	String getIdBookmark(String idBook, String idUser);
 }
