@@ -19,26 +19,23 @@ public class BookmarkDaoImpl extends BaseDaoImpl implements BookmarkDao {
 
 	@Override
 	public Bookmark update(Bookmark data) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.saveUpdate(data);
 	}
 
 	@Override
 	public Bookmark getById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.getById(Bookmark.class, id);
 	}
 
 	@Override
 	public void deleteById(String id) {
-		// TODO Auto-generated method stub
-		
+		super.deleteById(Bookmark.class, id);
 	}
 
 	@Override
 	public List<Bookmark> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Bookmark> data = em.createQuery("FROM Bookmark", Bookmark.class).getResultList();
+		return data;
 	}
 	
 	@Override
